@@ -1,12 +1,16 @@
 <?php
   $lenght = $_GET["psw-lenght"] ?? "" ;
-  
-  
+  $pswCharacters = "abcdefghilmnoABCDEFGHILMNO1234567890£$%&/@" ;
+  $pswFinal = "" ;
   $starterWhile= 0;
   while ($starterWhile < $lenght) {
-    echo("indice : " . rand(0, 100) . " <br>") ;
+    // echo("index : " . rand(0, 100) . " <br>") ;
+    $random = rand(0, strlen($pswCharacters)-1) ;
+    // echo($pswCharacters[$random]);
+    $pswFinal .= $pswCharacters[$random] ;
     $starterWhile++ ;
   }
+  
   
 ?>
 
@@ -48,6 +52,13 @@
             </div>
 
         </form>
+
+        <div>
+            <h2>La tua password è:</h2>
+            <p>
+                <?php echo $pswFinal; ?>
+            </p>
+        </div>
     </div>
 </body>
 
