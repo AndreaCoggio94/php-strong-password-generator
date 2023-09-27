@@ -1,19 +1,21 @@
 <?php
 session_start() ;
-  $length = $_GET["psw-length"] ?? "" ;
-  $pswCharacters = "abcdefghilmnoABCDEFGHILMNO1234567890£$%&/@" ;
-  
+include __DIR__ . "/functions.php" ;
+ 
 
-  include __DIR__ . "/functions.php" ;
+$length = $_GET["psw-length"] ?? "" ;
   
-  $_SESSION["pswFinal"] = $pswFinal ;
-  
+  if($length) {
+    $pswCharacters = "abcdefghilmnoABCDEFGHILMNO1234567890$%&/@" ;
+    $pswFinal = randomPswGenerator($length, $pswCharacters) ;
+    $_SESSION["pswFinal"] = $pswFinal ;
 
-  if(!empty($_SESSION)) {
-    echo $_SESSION["pswFinal"] ;
-    header('Location: ./result.php');
-    exit();
+    if(!empty($_SESSION["pswFinal"])) {
+      echo $_SESSION["pswFinal"] ;
+      header('Location: ./result.php');
+      exit();
   }
+}
     
 
 ?>
@@ -59,12 +61,7 @@ session_start() ;
             </form>
         </div>
 
-        <div class="card p-4">
-            <h4>La tua password è:</h4>
-            <p>
-                <?php echo $pswFinal; ?>
-            </p>
-        </div>
+
     </div>
 </body>
 

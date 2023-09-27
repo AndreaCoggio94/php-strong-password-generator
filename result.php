@@ -1,7 +1,9 @@
 <?php
 session_start() ;
 
-echo $_SESSION["pswFinal"] ;
+
+
+
 ?>
 
 
@@ -32,12 +34,15 @@ echo $_SESSION["pswFinal"] ;
 </head>
 
 <body>
-    <h1>
-        <?php
+    <div class="container mt-4">
 
-   
-        ?>
-    </h1>
+        <div class="card p-4">
+            <h4>La tua password è:</h4>
+            <p>
+                <?php echo $_SESSION["pswFinal"] ; ?>
+            </p>
+        </div>
+    </div>
 </body>
 
 </html>
