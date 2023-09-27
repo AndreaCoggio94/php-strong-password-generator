@@ -1,3 +1,16 @@
+<?php
+  $lenght = $_GET["psw-lenght"] ?? "" ;
+  
+  
+  $starterWhile= 0;
+  while ($starterWhile < $lenght) {
+    echo("indice : " . rand(0, 100) . " <br>") ;
+    $starterWhile++ ;
+  }
+  
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +38,17 @@
 </head>
 
 <body>
+    <div class="container mt-5">
 
+        <form method="GET">
+            <label for="psw-lenght" class="form-label">Password Lenght</label>
+            <input name="psw-lenght" type="number" id="psw-lenght" class="form-control">
+            <div class="form-text">
+                Insert only a number.
+            </div>
+
+        </form>
+    </div>
 </body>
 
 </html>
