@@ -8,7 +8,14 @@ session_start() ;
   
   $_SESSION["pswFinal"] = $pswFinal ;
   
-  echo $_SESSION["pswFinal"] ;
+
+  if(!empty($_SESSION)) {
+    echo $_SESSION["pswFinal"] ;
+    header('Location: ./result.php');
+    exit();
+  }
+    
+
 ?>
 
 
