@@ -2,19 +2,9 @@
   $length = $_GET["psw-length"] ?? "" ;
   $pswCharacters = "abcdefghilmnoABCDEFGHILMNO1234567890£$%&/@" ;
   
-  function randomPswGenerator($maxWhile , $pswChoosenCharacters) {
-    $psw = "" ;
-    $starterWhile= 0;
-    while ($starterWhile < $maxWhile) {
-      // echo("index : " . rand(0, 100) . " <br>") ;
-      $random = rand(0, strlen($pswChoosenCharacters)-1) ;
-      // echo($pswCharacters[$random]);
-      $psw .= $pswChoosenCharacters[$random] ;
-      $starterWhile++ ;
-    }
-    
-    return $psw;
-  }
+
+  include __DIR__ . "/functions.php" ;
+  
   
   $pswFinal = randomPswGenerator($length, $pswCharacters) ;
   
