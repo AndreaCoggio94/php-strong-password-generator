@@ -40,19 +40,20 @@
 
 <body>
     <div class="container mt-5">
+        <div class="card p-4">
 
-        <form method="GET">
-            <label for="psw-length" class="form-label">Password Length</label>
-            <input name="psw-length" type="number" id="psw-length" class="form-control">
-            <button class="btn btn-primary"> Send </button>
-            <div class="form-text">
-                Insert only a number.
-            </div>
+            <form method="GET">
+                <label for="psw-length" class="form-label">Password Length</label>
+                <div class="row">
 
-        </form>
+                    <input name="psw-length" type="number" id="psw-length" class="col form-control">
+                    <button class="col-2 btn btn-primary"> Send </button>
+                </div>
+            </form>
+        </div>
 
-        <div>
-            <h2>La tua password è:</h2>
+        <div class="card p-4">
+            <h4>La tua password è:</h4>
             <p>
                 <?php echo $pswFinal; ?>
             </p>
