@@ -1,4 +1,6 @@
 <?php 
+
+$pswFinal = randomPswGenerator($length, $pswCharacters) ;
 function randomPswGenerator($maxWhile , $pswChoosenCharacters) {
     $psw = "" ;
     $starterWhile= 0;

@@ -1,14 +1,7 @@
 <?php
 session_start() ;
-  $length = $_GET["psw-length"] ?? "" ;
-  $pswCharacters = "abcdefghilmnoABCDEFGHILMNO1234567890£$%&/@" ;
-  
 
-  include __DIR__ . "/functions.php" ;
-  
-  $_SESSION["pswFinal"] = $pswFinal ;
-  
-  echo $_SESSION["pswFinal"] ;
+echo $_SESSION["pswFinal"] ;
 ?>
 
 
@@ -22,7 +15,7 @@ session_start() ;
     <meta name="author" content="Andrea Coggio" />
     <meta name="description" content="new exercise" />
     <!-- title -->
-    <title>PHP Psw Generator</title>
+    <title>PHP Psw Generated</title>
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -39,26 +32,12 @@ session_start() ;
 </head>
 
 <body>
-    <div class="container mt-5">
-        <div class="card p-4">
+    <h1>
+        <?php
 
-            <form method="GET">
-                <label for="psw-length" class="form-label">Password Length</label>
-                <div class="row">
-
-                    <input name="psw-length" type="number" id="psw-length" class="col form-control">
-                    <button class="col-2 btn btn-primary"> Send </button>
-                </div>
-            </form>
-        </div>
-
-        <div class="card p-4">
-            <h4>La tua password è:</h4>
-            <p>
-                <?php echo $pswFinal; ?>
-            </p>
-        </div>
-    </div>
+   
+        ?>
+    </h1>
 </body>
 
 </html>
