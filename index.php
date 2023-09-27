@@ -1,15 +1,22 @@
 <?php
-  $lenght = $_GET["psw-lenght"] ?? "" ;
+  $length = $_GET["psw-length"] ?? "" ;
   $pswCharacters = "abcdefghilmnoABCDEFGHILMNO1234567890£$%&/@" ;
-  $pswFinal = "" ;
-  $starterWhile= 0;
-  while ($starterWhile < $lenght) {
-    // echo("index : " . rand(0, 100) . " <br>") ;
-    $random = rand(0, strlen($pswCharacters)-1) ;
-    // echo($pswCharacters[$random]);
-    $pswFinal .= $pswCharacters[$random] ;
-    $starterWhile++ ;
+  
+  function randomPswGenerator($maxWhile , $pswChoosenCharacters) {
+    $psw = "" ;
+    $starterWhile= 0;
+    while ($starterWhile < $maxWhile) {
+      // echo("index : " . rand(0, 100) . " <br>") ;
+      $random = rand(0, strlen($pswChoosenCharacters)-1) ;
+      // echo($pswCharacters[$random]);
+      $psw .= $pswChoosenCharacters[$random] ;
+      $starterWhile++ ;
+    }
+    
+    return $psw;
   }
+  
+  $pswFinal = randomPswGenerator($length, $pswCharacters) ;
   
   
 ?>
@@ -45,8 +52,9 @@
     <div class="container mt-5">
 
         <form method="GET">
-            <label for="psw-lenght" class="form-label">Password Lenght</label>
-            <input name="psw-lenght" type="number" id="psw-lenght" class="form-control">
+            <label for="psw-length" class="form-label">Password Length</label>
+            <input name="psw-length" type="number" id="psw-length" class="form-control">
+            <button class="btn btn-primary"> Send </button>
             <div class="form-text">
                 Insert only a number.
             </div>
