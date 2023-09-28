@@ -2,6 +2,7 @@
 session_start() ;
 include __DIR__ . "/functions.php" ;
  
+$title= '"Strong" password generator' ;
 
 $length = $_GET["psw-length"] ?? "" ;
   
@@ -47,16 +48,18 @@ $length = $_GET["psw-length"] ?? "" ;
         defer></script>
 </head>
 
-<body>
+<body data-bs-theme="dark">
     <div class="container mt-5">
         <div class="card p-4">
-
+            <h1 class="card-title">
+                <?php echo $title ?>
+            </h1>
             <form method="GET">
                 <label for="psw-length" class="form-label">Password Length</label>
-                <div class="row">
-
-                    <input name="psw-length" type="number" id="psw-length" class="col form-control">
-                    <button class="col-2 btn btn-primary"> Send </button>
+                <div>
+                    <input name="psw-length" type="number" id="psw-length" class="w-30 mb-3 form-control" min="5"
+                        max="30">
+                    <button class=" btn btn-primary"> Send </button>
                 </div>
             </form>
         </div>

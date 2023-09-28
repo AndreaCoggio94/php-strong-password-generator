@@ -1,9 +1,5 @@
 <?php
 session_start() ;
-
-
-
-
 ?>
 
 
@@ -33,9 +29,8 @@ session_start() ;
         defer></script>
 </head>
 
-<body>
+<body data-bs-theme="dark">
     <div class="container mt-4">
-
         <div class="card p-4">
             <h4>La tua password è:</h4>
             <p>
